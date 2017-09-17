@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLo-qM-8ic" customClass="PreviewView" customModule="CustomCamera" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4T-CI-bQ2">
+                                <rect key="frame" x="147" y="609" width="81" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="63c-Ap-pv7"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ey6-n7-Ohk"/>
+                                </constraints>
+                                <state key="normal" title="Capture"/>
+                                <connections>
+                                    <action selector="capturePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lgc-kL-qEK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xd-jR-SDP">
+                                <rect key="frame" x="24" y="609" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="KdZ-YA-BKd"/>
+                                    <constraint firstAttribute="height" constant="30" id="zzY-Bm-iLi"/>
+                                </constraints>
+                                <state key="normal" title="ISO"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fZ-ti-DFt">
+                                <rect key="frame" x="260" y="609" width="99" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="dTU-JL-Hom"/>
+                                    <constraint firstAttribute="height" constant="30" id="fo4-Id-EBN"/>
+                                </constraints>
+                                <state key="normal" title="Shutter Speed"/>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="G6Y-Cg-YKU">
+                                <rect key="frame" x="20" y="570" width="118" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="TcJ-IW-anq"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="setISO:" destination="BYZ-38-t0r" eventType="valueChanged" id="FKg-bB-UoI"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hRV-jn-13V">
+                                <rect key="frame" x="240" y="570" width="118" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="zQY-oG-arf"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="setShutterSpeed:" destination="BYZ-38-t0r" eventType="valueChanged" id="z4C-cJ-wEP"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fLo-qM-8ic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="DCF-EJ-nNu"/>
+                            <constraint firstItem="4xd-jR-SDP" firstAttribute="top" secondItem="fLo-qM-8ic" secondAttribute="bottom" constant="-58" id="EsT-k5-EWZ"/>
+                            <constraint firstItem="g4T-CI-bQ2" firstAttribute="top" secondItem="fLo-qM-8ic" secondAttribute="bottom" constant="-58" id="HPJ-LS-aUJ"/>
+                            <constraint firstItem="g4T-CI-bQ2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jx7-xU-kj3"/>
+                            <constraint firstItem="hRV-jn-13V" firstAttribute="baseline" secondItem="G6Y-Cg-YKU" secondAttribute="baseline" id="ND2-Zl-4sy"/>
+                            <constraint firstItem="G6Y-Cg-YKU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="6" id="NUX-9f-T6c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fLo-qM-8ic" secondAttribute="trailing" constant="-16" id="PQZ-nA-auV"/>
+                            <constraint firstItem="4xd-jR-SDP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="aAl-kd-wQu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hRV-jn-13V" secondAttribute="trailing" constant="3" id="bdJ-2N-e5g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3fZ-ti-DFt" secondAttribute="trailing" id="blv-u2-Gvm"/>
+                            <constraint firstItem="hRV-jn-13V" firstAttribute="baseline" secondItem="G6Y-Cg-YKU" secondAttribute="baseline" id="ebC-nv-R0P"/>
+                            <constraint firstItem="4xd-jR-SDP" firstAttribute="top" secondItem="G6Y-Cg-YKU" secondAttribute="bottom" constant="9" id="g7d-lT-G19"/>
+                            <constraint firstItem="3fZ-ti-DFt" firstAttribute="top" secondItem="fLo-qM-8ic" secondAttribute="bottom" constant="-58" id="mCe-X2-ZVl"/>
+                            <constraint firstItem="fLo-qM-8ic" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="obP-oR-QzZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fLo-qM-8ic" secondAttribute="bottom" id="xGG-4B-chi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="fLo-qM-8ic" id="ls1-MR-sue"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
